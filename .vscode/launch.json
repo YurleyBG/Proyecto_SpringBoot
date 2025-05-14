@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JyvToolsApplication<jyv_tools>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.jyv_tools.JyvToolsApplication",
+            "projectName": "jyv_tools",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
