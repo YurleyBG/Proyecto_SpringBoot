@@ -19,6 +19,7 @@ public class Reservas {
     private Long id;
     private Timestamp fecha_inicio , fecha_fin;
     private BigDecimal costo_total;
+    private int cantidad;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="id_Cliente",nullable = false)
@@ -32,11 +33,12 @@ public class Reservas {
     private Herramientas herramienta;
 
 
-    public Reservas(BigDecimal costo_total, Timestamp fecha_fin, Timestamp fecha_inicio, Long id) {
+    public Reservas(BigDecimal costo_total, Timestamp fecha_fin, Timestamp fecha_inicio, Long id, int cantidad) {
         this.costo_total = costo_total;
         this.fecha_fin = fecha_fin;
         this.fecha_inicio = fecha_inicio;
         this.id = id;
+        this.cantidad=cantidad;
     }
 
     public Reservas() {
@@ -98,6 +100,14 @@ public class Reservas {
         this.herramienta = herramienta;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
 
 
 

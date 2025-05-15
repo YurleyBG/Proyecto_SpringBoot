@@ -24,6 +24,8 @@ public class Usuarios{
     private String apellido2;
     private String  correo,telefono, direccion;
     private Timestamp Fecha_Registro;
+    private String Usuario;
+    private String contraseña;
 
     @OneToMany(mappedBy="usuario",fetch= FetchType.EAGER)
     private List<Detalles_Proveedores> detalles_Proveedores ;
@@ -45,17 +47,48 @@ public class Usuarios{
     public Usuarios() {
     }
 
-    public Usuarios(Timestamp Fecha_Registro, String apellido1, String apellido2, String correo, String direccion, Long id, String nombre1, String nombre2, String telefono) {
-        this.Fecha_Registro = Fecha_Registro;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
-        this.correo = correo;
-        this.direccion = direccion;
+    
+
+    public Usuarios(Long id, String nombre1, String nombre2, String apellido1, String apellido2, String correo,
+            String telefono, String direccion, Timestamp fecha_Registro, String usuario, String contraseña) {
         this.id = id;
         this.nombre1 = nombre1;
         this.nombre2 = nombre2;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.correo = correo;
         this.telefono = telefono;
+        this.direccion = direccion;
+        this.Fecha_Registro = fecha_Registro;
+        this.Usuario = usuario;
+        this.contraseña = contraseña;
     }
+
+
+
+    public String getUsuario() {
+        return Usuario;
+    }
+
+
+
+    public void setUsuario(String usuario) {
+        Usuario = usuario;
+    }
+
+
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+
 
     public Long getId() {
         return id;
